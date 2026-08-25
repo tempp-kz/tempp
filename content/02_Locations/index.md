@@ -1,5 +1,7 @@
 ---
 title: Location
+cssclasses:
+  - location-map-page
 ---
 
 # 架空都市神津
