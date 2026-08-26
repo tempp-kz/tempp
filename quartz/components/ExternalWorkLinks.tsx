@@ -21,6 +21,23 @@ const ExternalWorkLinks: QuartzComponentConstructor = () => {
     return match ? match[0] : undefined
   }
 
+  function isWorkCatalogPage() {
+    const catalogPath = new URL(workCatalogUrl, window.location.origin).pathname
+      .replace(/\\/$/, "")
+    const currentPath = window.location.pathname.replace(/\\/$/, "")
+    return currentPath === catalogPath
+  }
+
+  function removeCatalogTitleLinks() {
+    if (!isWorkCatalogPage()) return
+
+    for (const link of document.querySelectorAll(
+      "table tbody td:first-child a.internal",
+    )) {
+      link.replaceWith(document.createTextNode(link.textContent || ""))
+    }
+  }
+
   async function loadWorkLinkMap() {
     if (workLinkMapPromise) return workLinkMapPromise
 
@@ -67,6 +84,8 @@ const ExternalWorkLinks: QuartzComponentConstructor = () => {
   }
 
   async function updateExternalWorkLinks() {
+    removeCatalogTitleLinks()
+
     const links = await loadWorkLinkMap()
     if (links.size === 0) return
 
