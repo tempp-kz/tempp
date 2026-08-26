@@ -4,7 +4,7 @@ const ExternalWorkLinks: QuartzComponentConstructor = () => {
   const Component: QuartzComponent = () => null
 
   Component.afterDOMLoaded = `
-  const workCatalogUrl = "/tempp/反映小説一覧/"
+  const workCatalogUrl = "/tempp/反映小説一覧"
   let workLinkMapPromise
 
   function normalizeWorkTitle(value) {

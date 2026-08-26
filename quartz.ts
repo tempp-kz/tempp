@@ -1,6 +1,7 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import { componentRegistry } from "./quartz/components/registry"
 import PublicCatalogCounts from "./quartz/components/PublicCatalogCounts"
+import ExternalWorkLinks from "./quartz/components/ExternalWorkLinks"
 
 componentRegistry.register(
   "public-catalog-counts",
@@ -8,6 +9,11 @@ componentRegistry.register(
   "local",
 )
 
+componentRegistry.register(
+  "external-work-links",
+  ExternalWorkLinks,
+  "local",
+)
 
 componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   order: ["filter", "sort", "map"],
