@@ -133,3 +133,19 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   text-align: right;
   white-space: nowrap;
 }
+
+/* Characters index：三列表の横罫線を統一 */
+.characters-index-page table {
+  border-collapse: collapse;
+}
+
+.characters-index-page table th,
+.characters-index-page table td {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.characters-index-page table thead tr,
+.characters-index-page table tbody tr {
+  border-bottom: 1px solid var(--lightgray) !important;
+}

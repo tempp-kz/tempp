@@ -1,5 +1,7 @@
 ---
 title: Characters
+cssclasses:
+  - characters-index-page
 ---
 
 
