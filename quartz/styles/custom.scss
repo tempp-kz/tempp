@@ -92,7 +92,7 @@ table:has(.catalog-count[data-catalog-prefix]) {
   max-width: 38rem;
   margin: 0 !important;
   border-top: 2px solid var(--gray);
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 2px solid var(--gray);
 }
 
 /* 合計行と表の間にQuartz既定の余白を残さない */
@@ -108,11 +108,15 @@ p:has(> .catalog-count[data-catalog-total]) {
 table:has(.catalog-count[data-catalog-prefix]) thead,
 table:has(.catalog-count[data-catalog-prefix]) th {
   background: transparent;
-  border-bottom: 1px solid var(--lightgray) !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
 }
 
-table:has(.catalog-count[data-catalog-prefix]) thead tr {
-  border-bottom: 1px solid var(--lightgray) !important;
+table:has(.catalog-count[data-catalog-prefix]) thead tr,
+table:has(.catalog-count[data-catalog-prefix]) tbody tr,
+table:has(.catalog-count[data-catalog-prefix]) td {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
 }
 
 table:has(.catalog-count[data-catalog-prefix]) th {
