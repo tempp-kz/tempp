@@ -14,11 +14,17 @@ title: 架空都市神津wiki
 ・残りの小説を反映する。
 ・公開済み作品については、各項目から外部の小説掲載サイトへリンクを作成する。
 
-# 世界
 
-- [[神津世界]]　うちのメイン世界の神津市を中心とした世界です。
-- [[PEM]]　ハイファンタジーの世界です。
-- [[ユフ]]　地球に隕石が落ちて来る世界です。
+## 公開資料目録
+
+| 分類 | 公開件数 |
+| --- | ---: |
+| [World](01_World/) | <span class="catalog-count" data-catalog-prefix="01_world">集計中</span> |
+| [Characters](03_Characters/) | <span class="catalog-count" data-catalog-prefix="03_characters">集計中</span> |
+| [Location](02_Locations/) | <span class="catalog-count" data-catalog-prefix="02_locations">集計中</span> |
+| [Places](05_Places/) | <span class="catalog-count" data-catalog-prefix="05_places">集計中</span> |
+| [Organizations](06_Organizations/) | <span class="catalog-count" data-catalog-prefix="06_organizations">集計中</span> |
+| **総計** | **<span class="catalog-count" data-catalog-total>集計中</span>** |
 
 
 AI作成↓

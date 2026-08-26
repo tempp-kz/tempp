@@ -1,5 +1,13 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import { componentRegistry } from "./quartz/components/registry"
+import PublicCatalogCounts from "./quartz/components/PublicCatalogCounts"
+
+componentRegistry.register(
+  "public-catalog-counts",
+  PublicCatalogCounts,
+  "local",
+)
+
 
 componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   order: ["filter", "sort", "map"],
