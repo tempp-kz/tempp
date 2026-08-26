@@ -21,9 +21,8 @@ title: 架空都市神津wiki
 
 ---
 
-|  |  |  |  |
-| --- | ---: | --- | ---: |
 | [World](01_World/) | <span class="catalog-count" data-catalog-prefix="01_world">集計中</span> | [Characters](03_Characters/) | <span class="catalog-count" data-catalog-prefix="03_characters">集計中</span> |
+| --- | ---: | --- | ---: |
 | [Location](02_Locations/) | <span class="catalog-count" data-catalog-prefix="02_locations">集計中</span> | [Organizations](06_Organizations/) | <span class="catalog-count" data-catalog-prefix="06_organizations">集計中</span> |
 | [Places](05_Places/) | <span class="catalog-count" data-catalog-prefix="05_places">集計中</span> |  |  |
 
