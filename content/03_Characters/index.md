@@ -3,7 +3,8 @@ title: Characters
 cssclasses:
   - characters-index-page
 ---
-![[media/kouzuwiki-index-characters.svg]]
+
+![[../media/kouzuwiki-index-characters.svg]]
 
 # 現代：神津区
 ### 果青関連

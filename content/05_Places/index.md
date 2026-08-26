@@ -4,7 +4,7 @@ cssclasses:
   - location-map-page
 ---
 
-![[media/kouzuwiki-index-places.svg]]
+![[../media/kouzuwiki-index-places.svg]]
 
 
 # 架空都市神津

@@ -2,7 +2,7 @@
 title: World
 ---
 
-![[media/kouzuwiki-index-world.svg]]
+![[../media/kouzuwiki-index-world.svg]]
 
 
 # 世界

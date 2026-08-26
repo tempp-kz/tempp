@@ -2,7 +2,7 @@
 title: Organizations
 ---
 
-![[media/kouzuwiki-index-organizations.svg]]
+![[../media/kouzuwiki-index-organizations.svg]]
 
 
 # 架空都市神津
