@@ -86,7 +86,19 @@ body[data-slug$="/index"] .note-properties {
 table:has(.catalog-count[data-catalog-prefix]) {
   width: 100%;
   max-width: 38rem;
-  margin: 0.5rem 0;
+  margin: 0 !important;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+
+/* 合計行と表の間にQuartz既定の余白を残さない */
+p:has(> .catalog-count[data-catalog-total]) {
+  margin-bottom: 0 !important;
+}
+
+.table-container:has(.catalog-count[data-catalog-prefix]) {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 table:has(.catalog-count[data-catalog-prefix]) thead,
