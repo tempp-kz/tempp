@@ -167,3 +167,23 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   font-size: 0;
   line-height: 0;
 }
+
+/* TOP・各indexの見出し画像：本文幅に合わせて縮小 */
+article img[src*="kouzuwiki-top-banner-transparent"],
+article img[src*="kouzuwiki-index-"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0.75rem auto 1.25rem;
+}
+
+/* Wikiリンクや埋め込み要素が画像の幅を拘束しないようにする */
+article a:has(> img[src*="kouzuwiki-top-banner-transparent"]),
+article a:has(> img[src*="kouzuwiki-index-"]),
+article .internal-embed:has(> img[src*="kouzuwiki-top-banner-transparent"]),
+article .internal-embed:has(> img[src*="kouzuwiki-index-"]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
