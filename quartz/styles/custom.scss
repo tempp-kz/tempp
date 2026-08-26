@@ -169,8 +169,8 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
 }
 
 /* TOP・各indexの見出し画像：本文幅に合わせて縮小 */
-article img[src*="kouzuwiki-top-banner-transparent"],
-article img[src*="kouzuwiki-index-"] {
+img[src*="kouzuwiki-top-banner-transparent"],
+img[src*="kouzuwiki-index-"] {
   display: block;
   width: 100% !important;
   max-width: 100% !important;
@@ -179,11 +179,29 @@ article img[src*="kouzuwiki-index-"] {
 }
 
 /* Wikiリンクや埋め込み要素が画像の幅を拘束しないようにする */
-article a:has(> img[src*="kouzuwiki-top-banner-transparent"]),
-article a:has(> img[src*="kouzuwiki-index-"]),
-article .internal-embed:has(> img[src*="kouzuwiki-top-banner-transparent"]),
-article .internal-embed:has(> img[src*="kouzuwiki-index-"]) {
+a:has(> img[src*="kouzuwiki-top-banner-transparent"]),
+a:has(> img[src*="kouzuwiki-index-"]),
+.internal-embed:has(> img[src*="kouzuwiki-top-banner-transparent"]),
+.internal-embed:has(> img[src*="kouzuwiki-index-"]) {
   display: block;
   width: 100%;
   max-width: 100%;
+}
+
+/* Quartzが埋め込み元のsrcを親要素へ付けた場合にも対応 */
+.internal-embed[src*="kouzuwiki-top-banner-transparent"],
+.internal-embed[src*="kouzuwiki-index-"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.internal-embed[src*="kouzuwiki-top-banner-transparent"] > :is(img, svg, object),
+.internal-embed[src*="kouzuwiki-index-"] > :is(img, svg, object),
+object[data*="kouzuwiki-top-banner-transparent"],
+object[data*="kouzuwiki-index-"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
