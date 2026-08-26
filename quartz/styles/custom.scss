@@ -103,6 +103,7 @@ p:has(> .catalog-count[data-catalog-total]) {
 .table-container:has(.catalog-count[data-catalog-prefix]) {
   margin: 0 !important;
   padding: 0 !important;
+  border: 0 !important;
 }
 
 table:has(.catalog-count[data-catalog-prefix]) thead,
