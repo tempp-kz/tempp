@@ -9,6 +9,10 @@
   margin: 1rem auto;
 }
 
+.location-map-page a > img {
+  cursor: zoom-in;
+}
+
 /* トップページ：公開資料目録 */
 .catalog-count {
   display: inline-block;
@@ -87,7 +91,7 @@ table:has(.catalog-count[data-catalog-prefix]) {
   width: 100%;
   max-width: 38rem;
   margin: 0 !important;
-  border-top: 1px solid var(--gray);
+  border-top: 2px solid var(--gray);
   border-bottom: 1px solid var(--gray);
 }
 
@@ -104,6 +108,11 @@ p:has(> .catalog-count[data-catalog-total]) {
 table:has(.catalog-count[data-catalog-prefix]) thead,
 table:has(.catalog-count[data-catalog-prefix]) th {
   background: transparent;
+  border-bottom: 1px solid var(--lightgray) !important;
+}
+
+table:has(.catalog-count[data-catalog-prefix]) thead tr {
+  border-bottom: 1px solid var(--lightgray) !important;
 }
 
 table:has(.catalog-count[data-catalog-prefix]) th {

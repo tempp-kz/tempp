@@ -25,4 +25,4 @@ cssclasses:
 
 神津観光MAP（Ver6.1）
 
-![[media/map6-1.ai.png]]
+[![神津観光MAP（Ver6.1）](media/map6-1.ai.png)](media/map6-1.ai.png)
