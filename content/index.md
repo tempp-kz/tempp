@@ -1,6 +1,8 @@
 ---
-title: 架空都市神津wiki
+title: Home
 ---
+
+![[media/kouzuwiki-top-banner-transparent.svg]]
 
 ここはTempp/久世余白の小説群に登場する架空都市・人物・組織・場所・世界設定をまとめた公開資料です。
 現在の小説の反映状況はおよそ【５％】です。

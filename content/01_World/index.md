@@ -1,6 +1,7 @@
 ---
 title: World
 ---
+![[media/kouzuwiki-index-world.svg]]
 
 
 # 世界
