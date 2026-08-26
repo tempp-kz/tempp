@@ -159,6 +159,8 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      title: 目次
     layout:
       position: left
       priority: 50
