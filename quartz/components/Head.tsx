@@ -33,6 +33,7 @@ export default (() => {
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some((e) => e.name === "CustomOgImages")
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
+    const twitterImagePath = `https://${cfg.baseUrl}/static/twitter-card.png`
 
     const coreStylesheet = css[0]?.content
     const coreScript = js.find(
@@ -73,7 +74,7 @@ export default (() => {
           <>
             <meta property="og:image" content={ogImageDefaultPath} />
             <meta property="og:image:url" content={ogImageDefaultPath} />
-            <meta name="twitter:image" content={ogImageDefaultPath} />
+            <meta name="twitter:image" content={twitterImagePath} />
             <meta
               property="og:image:type"
               content={`image/${getFileExtension(ogImageDefaultPath) ?? "png"}`}
