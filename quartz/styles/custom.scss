@@ -28,6 +28,21 @@ body[data-slug$="/index"] .note-properties {
   display: none;
 }
 
+/* 実在するフォルダindex：バナーと重複する見出し・自動一覧を隠す */
+body.authored-folder-index .page-header .article-title,
+body.authored-folder-index .page-listing {
+  display: none;
+}
+
+/* 読了情報は移動が終わるまで上部に表示しない */
+body.authored-folder-index .page-header .content-meta {
+  display: none;
+}
+
+body.authored-folder-index article .content-meta {
+  margin: 0 0 1.5rem;
+}
+
 /* 個別資料のプロパティ欄 */
 .note-properties {
   margin: 0.75rem 0 1.5rem;
@@ -132,4 +147,91 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   width: 5rem;
   text-align: right;
   white-space: nowrap;
+}
+
+/* Characters index：三列表の横罫線を統一 */
+.characters-index-page table {
+  border-collapse: collapse;
+}
+
+.characters-index-page table th,
+.characters-index-page table td {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.characters-index-page table thead tr,
+.characters-index-page table tbody tr {
+  border-bottom: 1px solid var(--lightgray) !important;
+}
+
+/* 左フレーム：サイト名を神津之介ロゴへ置換 */
+.page-title {
+  width: min(13.5rem, 100%);
+  margin: 0 auto;
+}
+
+.page-title > a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-image: url("./static/kouzunosuke-prohibition-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* TOPバナー：本文幅に合わせる */
+img[src*="kouzuwiki-top-banner-transparent"],
+object[data*="kouzuwiki-top-banner-transparent"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0.75rem auto 1.25rem;
+}
+
+/* 各カテゴリのindexバナー：広い画面でも文字が大きくなりすぎない */
+img[src*="kouzuwiki-index-"],
+object[data*="kouzuwiki-index-"] {
+  display: block;
+  width: min(100%, 50rem) !important;
+  max-width: 50rem !important;
+  height: auto !important;
+  margin: 0.75rem auto 1.25rem;
+}
+
+/* Wikiリンクや埋め込み要素が画像の幅を拘束しないようにする */
+a:has(> img[src*="kouzuwiki-top-banner-transparent"]),
+a:has(> img[src*="kouzuwiki-index-"]),
+.internal-embed:has(> img[src*="kouzuwiki-top-banner-transparent"]),
+.internal-embed:has(> img[src*="kouzuwiki-index-"]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Quartzが埋め込み元のsrcを親要素へ付けた場合にも対応 */
+.internal-embed[src*="kouzuwiki-top-banner-transparent"],
+.internal-embed[src*="kouzuwiki-index-"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.internal-embed[src*="kouzuwiki-top-banner-transparent"] > :is(img, svg, object) {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.internal-embed[src*="kouzuwiki-index-"] > :is(img, svg, object) {
+  display: block;
+  width: min(100%, 50rem) !important;
+  max-width: 50rem !important;
+  height: auto !important;
+  margin: 0.75rem auto 1.25rem;
 }
