@@ -99,6 +99,75 @@ body.authored-folder-index article .content-meta {
   }
 }
 
+/*
+ * Quartz本体のモバイル切替は640pxへ下げている。
+ * Explorerプラグインには800pxの切替が固定されているため、
+ * 640〜800pxでは通常の左フレーム表示へ戻す。
+ */
+@media all and (min-width: 640px) and (max-width: 800px) {
+  .page > #quartz-body > :not(.sidebar.left:has(.explorer)) {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .page > #quartz-body .sidebar.left:has(.explorer) {
+    position: sticky !important;
+    height: 100vh !important;
+    padding: $topSpacing 2rem 2rem !important;
+    margin: 0 !important;
+  }
+
+  .page > #quartz-body .hide-until-loaded ~ .explorer-content {
+    display: block !important;
+  }
+
+  .explorer {
+    order: initial !important;
+    height: auto !important;
+    flex-shrink: 1 !important;
+    align-self: auto !important;
+    margin: 0 !important;
+  }
+
+  .explorer.collapsed {
+    flex: 0 1 1.2rem !important;
+  }
+
+  .explorer:not(.collapsed) {
+    flex: 0 1 auto !important;
+  }
+
+  .explorer button.mobile-explorer {
+    display: none !important;
+  }
+
+  .explorer button.desktop-explorer {
+    display: flex !important;
+  }
+
+  .explorer.collapsed > .explorer-content,
+  .explorer:not(.collapsed) > .explorer-content,
+  .explorer .explorer-content {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin-top: 0.5rem !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: visible !important;
+    background-color: transparent !important;
+  }
+}
+
 
 
 /* 公開資料目録：Markdown表 */
@@ -165,6 +234,72 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   border-bottom: 1px solid var(--lightgray) !important;
 }
 
+/* Characters index：大区分の人物バナー */
+.characters-index-page h1:is(
+  #現代神津区,
+  #現代辻切区,
+  #現代港湾区,
+  #明治,
+  #大正,
+  #pem
+) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 5.25rem;
+  margin: 2.5rem 0 1.25rem;
+  padding: 0.65rem 0.75rem;
+  overflow: hidden;
+  border: 0;
+  background-color: var(--light);
+  background-image: var(--character-index-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.characters-index-page h1#現代神津区 {
+  --character-index-image: url("./static/character-index-kouzuku.webp");
+}
+
+.characters-index-page h1#現代辻切区 {
+  --character-index-image: url("./static/character-index-tsujikiri.webp");
+}
+
+.characters-index-page h1#現代港湾区 {
+  --character-index-image: url("./static/character-index-kouwan.webp");
+}
+
+.characters-index-page h1#明治 {
+  --character-index-image: url("./static/character-index-meiji.webp");
+}
+
+.characters-index-page h1#大正 {
+  --character-index-image: url("./static/character-index-taisho.webp");
+}
+
+.characters-index-page h1#pem {
+  --character-index-image: url("./static/character-index-pem.webp");
+}
+
+@media all and (max-width: 639.98px) {
+  .characters-index-page h1:is(
+    #現代神津区,
+    #現代辻切区,
+    #現代港湾区,
+    #明治,
+    #大正,
+    #pem
+  ) {
+    min-height: 4.5rem;
+    padding: 0.5rem;
+    font-size: 1.55rem;
+    background-position: right center;
+    background-size: auto 100%;
+  }
+}
+
 /* 左フレーム：サイト名を神津之介ロゴへ置換 */
 .page-title {
   width: min(13.5rem, 100%);
@@ -181,6 +316,22 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   background-size: contain;
   font-size: 0;
   line-height: 0;
+}
+
+/* 通常表示：ロゴを左フレーム左上の安定した位置に置く */
+@media all and (min-width: 640px) {
+  .page > #quartz-body .sidebar.left:has(.page-title) {
+    padding-top: 1rem !important;
+  }
+
+  .page-title {
+    position: sticky;
+    top: 1rem;
+    z-index: 2;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin: 0;
+  }
 }
 
 /* TOPバナー：本文幅に合わせる */
