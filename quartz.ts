@@ -1,7 +1,9 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
+import type { ExplorerOptions } from "@quartz-community/explorer"
 import { componentRegistry } from "./quartz/components/registry"
 import PublicCatalogCounts from "./quartz/components/PublicCatalogCounts"
 import ExternalWorkLinks from "./quartz/components/ExternalWorkLinks"
+import WikiPageEnhancements from "./quartz/components/WikiPageEnhancements"
 
 componentRegistry.register(
   "public-catalog-counts",
@@ -15,10 +17,14 @@ componentRegistry.register(
   "local",
 )
 
+componentRegistry.register("wiki-page-enhancements", WikiPageEnhancements, "local")
+
+type ExplorerNode = Parameters<NonNullable<ExplorerOptions["mapFn"]>>[0]
+
 componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   order: ["filter", "sort", "map"],
 
-  sortFn: (a, b) => {
+  sortFn: (a: ExplorerNode, b: ExplorerNode) => {
     if (a.isFolder !== b.isFolder) {
       return a.isFolder ? -1 : 1
     }
@@ -108,7 +114,7 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
     })
   },
 
-  mapFn: (node) => {
+  mapFn: (node: ExplorerNode) => {
     const path = (node.slugSegments ?? []).join("/")
 
     // Explorer上だけで使う表示名
