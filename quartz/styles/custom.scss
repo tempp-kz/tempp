@@ -255,8 +255,8 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   background-color: var(--light);
   background-image: var(--character-index-image);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background-position: right center;
+  background-size: auto 100%;
 }
 
 .characters-index-page h1#現代神津区 {
