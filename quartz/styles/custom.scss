@@ -255,8 +255,8 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   background-color: var(--light);
   background-image: var(--character-index-image);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background-position: right center;
+  background-size: auto 100%;
 }
 
 .characters-index-page h1#現代神津区 {
@@ -297,6 +297,99 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
     font-size: 1.55rem;
     background-position: right center;
     background-size: auto 100%;
+  }
+}
+
+/* Places index：行政区分・地域別バナー */
+.places-index-page :is(
+  h1#神白県,
+  h2#神津市,
+  h3#神津区,
+  h3#辻切区,
+  h3#逆城町,
+  h3#新谷坂町,
+  h3#港湾区,
+  h3#三神工業
+) {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 0;
+  background-color: var(--light);
+  background-image: var(--place-index-image);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+}
+
+.places-index-page :is(h1#神白県, h2#神津市) {
+  min-height: 5.3125rem;
+  margin: 2.5rem 0 1.25rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.places-index-page :is(
+  h3#神津区,
+  h3#辻切区,
+  h3#逆城町,
+  h3#新谷坂町,
+  h3#港湾区,
+  h3#三神工業
+) {
+  min-height: 3.6875rem;
+  margin: 2rem 0 1rem;
+  padding: 0.4rem 0.65rem;
+}
+
+.places-index-page h1#神白県 {
+  --place-index-image: url("./static/place-index-kajiro.webp");
+}
+
+.places-index-page h2#神津市 {
+  --place-index-image: url("./static/place-index-kouzusi.webp");
+}
+
+.places-index-page h3#神津区 {
+  --place-index-image: url("./static/place-index-kouduku.webp");
+}
+
+.places-index-page h3#辻切区 {
+  --place-index-image: url("./static/place-index-tujikiku.webp");
+}
+
+.places-index-page h3#逆城町 {
+  --place-index-image: url("./static/place-index-sakasiro.webp");
+}
+
+.places-index-page h3#新谷坂町 {
+  --place-index-image: url("./static/place-index-niyasaka.webp");
+}
+
+.places-index-page h3#港湾区 {
+  --place-index-image: url("./static/place-index-kouwan.webp");
+}
+
+.places-index-page h3#三神工業 {
+  --place-index-image: url("./static/place-index-sansin.webp");
+}
+
+@media all and (max-width: 639.98px) {
+  .places-index-page :is(h1#神白県, h2#神津市) {
+    padding: 0.5rem;
+    font-size: 1.55rem;
+  }
+
+  .places-index-page :is(
+    h3#神津区,
+    h3#辻切区,
+    h3#逆城町,
+    h3#新谷坂町,
+    h3#港湾区,
+    h3#三神工業
+  ) {
+    padding: 0.35rem 0.5rem;
+    font-size: 1.25rem;
   }
 }
 

@@ -2,6 +2,7 @@
 title: Places
 cssclasses:
   - location-map-page
+  - places-index-page
 ---
 
 ![[../media/kouzuwiki-index-places.svg]]
@@ -116,7 +117,7 @@ cssclasses:
 
 逆城北
 
-### 新夜坂町
+### 新谷坂町
 | [[ライオ・デル・ソル]] |  |  |
 | --- | --- | --- |
 
