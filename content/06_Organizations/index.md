@@ -1,5 +1,7 @@
 ---
 title: Organizations
+cssclasses:
+  - organizations-index-page
 ---
 
 ![[../media/kouzuwiki-index-organizations.svg]]
@@ -37,6 +39,5 @@ title: Organizations
 ## 石燕市
 | [[神亜重工]] |  |  |
 | --- | --- | --- |
-
 
 

@@ -393,6 +393,85 @@ table:has(.catalog-count[data-catalog-prefix]) td:nth-child(4) {
   }
 }
 
+/* Organizations index：行政区分・地域別バナー */
+.organizations-index-page :is(
+  h1#神白県,
+  h2#神津市,
+  h3#神津区,
+  h3#辻切区,
+  h3#港湾区,
+  h3#三神工業
+) {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 0;
+  background-color: var(--light);
+  background-image: var(--organization-index-image);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+}
+
+.organizations-index-page :is(h1#神白県, h2#神津市) {
+  min-height: 5.3125rem;
+  margin: 2.5rem 0 1.25rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.organizations-index-page :is(
+  h3#神津区,
+  h3#辻切区,
+  h3#港湾区,
+  h3#三神工業
+) {
+  min-height: 3.6875rem;
+  margin: 2rem 0 1rem;
+  padding: 0.4rem 0.65rem;
+}
+
+.organizations-index-page h1#神白県 {
+  --organization-index-image: url("./static/organization-index-kajiro.webp");
+}
+
+.organizations-index-page h2#神津市 {
+  --organization-index-image: url("./static/organization-index-kouzusi.webp");
+}
+
+.organizations-index-page h3#神津区 {
+  --organization-index-image: url("./static/organization-index-kouduku.webp");
+}
+
+.organizations-index-page h3#辻切区 {
+  --organization-index-image: url("./static/organization-index-tujikiku.webp");
+}
+
+.organizations-index-page h3#港湾区 {
+  --organization-index-image: url("./static/organization-index-kouwanku.webp");
+}
+
+.organizations-index-page h3#三神工業 {
+  --organization-index-image: url("./static/organization-index-sansin.webp");
+}
+
+@media all and (max-width: 639.98px) {
+  .organizations-index-page :is(h1#神白県, h2#神津市) {
+    padding: 0.5rem;
+    font-size: 1.55rem;
+  }
+
+  .organizations-index-page :is(
+    h3#神津区,
+    h3#辻切区,
+    h3#港湾区,
+    h3#三神工業
+  ) {
+    padding: 0.35rem 0.5rem;
+    font-size: 1.25rem;
+  }
+}
+
 /* 左フレーム：サイト名を神津之介ロゴへ置換 */
 .page-title {
   width: min(13.5rem, 100%);
