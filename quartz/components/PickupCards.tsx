@@ -289,7 +289,7 @@ const PickupCards: QuartzComponentConstructor = () => {
     grid-template-columns: minmax(6.8rem, 30%) minmax(0, 1fr);
     min-height: 17.5rem;
     margin: 0;
-    padding: 1.35rem 2.25rem 1.35rem 1.55rem;
+    padding: 1.35rem 3.35rem 1.6rem 2.1rem;
     overflow: hidden;
     border: 0;
     border-radius: 0;
@@ -330,14 +330,14 @@ const PickupCards: QuartzComponentConstructor = () => {
     min-width: 0;
     flex-direction: column;
     justify-content: center;
-    padding: 0.45rem 0.85rem 0.45rem 0.9rem;
+    padding: 0.45rem 1.15rem 0.6rem 0.9rem;
     color: var(--dark);
     overflow-wrap: anywhere;
   }
 
   .kouzu-pickup-card__kicker {
     align-self: flex-start;
-    margin: 0 0 0.55rem;
+    margin: 0 0 0.45rem;
     padding: 0.3rem 0.75rem;
     border-bottom: 1px solid color-mix(in srgb, var(--dark) 65%, transparent);
     background: color-mix(in srgb, var(--light) 70%, transparent);
@@ -352,10 +352,10 @@ const PickupCards: QuartzComponentConstructor = () => {
     align-items: baseline;
     gap: 0.55rem;
     min-width: 0;
-    margin: 0 0 0.55rem;
+    margin: 0 0 0.45rem;
     padding: 0 0 0.45rem;
     border-bottom: 1px solid color-mix(in srgb, var(--dark) 42%, transparent);
-    font-size: clamp(1.25rem, 2.1vw, 1.8rem);
+    font-size: clamp(1.15rem, 1.85vw, 1.55rem);
     line-height: 1.25;
   }
 
@@ -373,15 +373,15 @@ const PickupCards: QuartzComponentConstructor = () => {
     display: grid;
     gap: 0;
     margin: 0;
-    font-size: 0.88rem;
-    line-height: 1.65;
+    font-size: 0.84rem;
+    line-height: 1.48;
   }
 
   .kouzu-pickup-card__row {
     display: grid;
     grid-template-columns: max-content minmax(0, 1fr);
-    gap: 0.65rem;
-    padding: 0.38rem 0;
+    gap: 0.55rem;
+    padding: 0.28rem 0;
     border-bottom: 1px dotted color-mix(in srgb, var(--dark) 28%, transparent);
   }
 
@@ -418,7 +418,7 @@ const PickupCards: QuartzComponentConstructor = () => {
     .kouzu-pickup-card {
       grid-template-columns: 1fr;
       min-height: 0;
-      padding: 1.2rem 1.35rem 1.35rem;
+      padding: 1.2rem 1.8rem 1.55rem 1.65rem;
       background-size: cover;
     }
 
@@ -431,7 +431,7 @@ const PickupCards: QuartzComponentConstructor = () => {
     }
 
     .kouzu-pickup-card__content {
-      padding: 0.55rem 0.75rem 0.15rem;
+      padding: 0.55rem 0.95rem 0.3rem 0.85rem;
     }
 
     .kouzu-pickup-card__row {
