@@ -4,12 +4,15 @@ import { componentRegistry } from "./quartz/components/registry"
 import PublicCatalogCounts from "./quartz/components/PublicCatalogCounts"
 import ExternalWorkLinks from "./quartz/components/ExternalWorkLinks"
 import WikiPageEnhancements from "./quartz/components/WikiPageEnhancements"
+import PickupCards from "./quartz/components/PickupCards"
 
 componentRegistry.register("public-catalog-counts", PublicCatalogCounts, "local")
 
 componentRegistry.register("external-work-links", ExternalWorkLinks, "local")
 
 componentRegistry.register("wiki-page-enhancements", WikiPageEnhancements, "local")
+
+componentRegistry.register("pickup-cards", PickupCards, "local")
 
 type ExplorerNode = Parameters<NonNullable<ExplorerOptions["mapFn"]>>[0]
 

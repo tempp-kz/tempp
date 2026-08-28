@@ -105,6 +105,7 @@ const ExternalWorkLinks: QuartzComponentConstructor = () => {
 
   document.addEventListener("nav", updateExternalWorkLinks)
   document.addEventListener("render", updateExternalWorkLinks)
+  document.addEventListener("kouzu-pickup-ready", updateExternalWorkLinks)
   updateExternalWorkLinks()
   `
 
