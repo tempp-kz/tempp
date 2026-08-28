@@ -57,6 +57,29 @@ const PickupCards: QuartzComponentConstructor = () => {
     return shuffled
   }
 
+  function kouzuPickupSelectionKey(cards) {
+    return cards
+      .map((card) => card.name)
+      .sort()
+      .join("\u001f")
+  }
+
+  function kouzuPickupOrderKey(cards) {
+    return cards.map((card) => card.name).join("\u001f")
+  }
+
+  function kouzuPickupSelectCards(count, previousSelection) {
+    let selected = kouzuPickupShuffle(kouzuPickupCards).slice(0, count)
+    if (kouzuPickupCards.length <= count || !previousSelection) return selected
+
+    for (let attempt = 0; attempt < 8; attempt += 1) {
+      if (kouzuPickupSelectionKey(selected) !== previousSelection) return selected
+      selected = kouzuPickupShuffle(kouzuPickupCards).slice(0, count)
+    }
+
+    return selected
+  }
+
   function kouzuPickupCreateCard(card, background) {
     const article = document.createElement("article")
     article.className = "kouzu-pickup-card kouzu-pickup-card--" + card.type
@@ -155,11 +178,15 @@ const PickupCards: QuartzComponentConstructor = () => {
     }
   }
 
-  function kouzuRenderPickupCards() {
+  function kouzuRenderPickupCards(forceRefresh = false) {
     const host = document.getElementById("kouzu-pickup-cards")
     if (!host) return
 
-    if (host.dataset.rendered === "true" && host.querySelector(".kouzu-pickup-card")) {
+    if (
+      !forceRefresh &&
+      host.dataset.rendered === "true" &&
+      host.querySelector(".kouzu-pickup-card")
+    ) {
       kouzuRefreshPickupAssets(host)
       document.dispatchEvent(new CustomEvent("kouzu-pickup-ready"))
       return
@@ -169,33 +196,85 @@ const PickupCards: QuartzComponentConstructor = () => {
     const count = Number.isFinite(requestedCount)
       ? Math.max(1, Math.min(requestedCount, kouzuPickupCards.length))
       : Math.min(2, kouzuPickupCards.length)
+    const previousSelection = host.dataset.pickupSelection || ""
+    const previousOrder = host.dataset.pickupOrder || ""
+    const selectedCards = kouzuPickupSelectCards(count, previousSelection)
+    if (
+      forceRefresh &&
+      count > 1 &&
+      kouzuPickupOrderKey(selectedCards) === previousOrder
+    ) {
+      selectedCards.reverse()
+    }
     const backgrounds = kouzuPickupShuffle(kouzuPickupBackgrounds)
+
+    const controls = document.createElement("div")
+    controls.className = "kouzu-pickup-controls"
+    const refreshButton = document.createElement("button")
+    refreshButton.type = "button"
+    refreshButton.className = "kouzu-pickup-refresh"
+    refreshButton.textContent = "↻ 表示を更新"
+    refreshButton.setAttribute("aria-label", "PICK UPをランダムに更新")
+    refreshButton.addEventListener("click", () => kouzuRenderPickupCards(true))
+    controls.appendChild(refreshButton)
 
     const grid = document.createElement("div")
     grid.className = "kouzu-pickup-grid"
     for (let index = 0; index < count; index += 1) {
       grid.appendChild(
         kouzuPickupCreateCard(
-          kouzuPickupCards[index],
+          selectedCards[index],
           backgrounds[index % backgrounds.length],
         ),
       )
     }
 
-    host.replaceChildren(grid)
+    host.replaceChildren(controls, grid)
+    host.dataset.pickupSelection = kouzuPickupSelectionKey(selectedCards)
+    host.dataset.pickupOrder = kouzuPickupOrderKey(selectedCards)
     host.dataset.rendered = "true"
     document.dispatchEvent(new CustomEvent("kouzu-pickup-ready"))
   }
 
-  document.addEventListener("nav", kouzuRenderPickupCards)
-  document.addEventListener("render", kouzuRenderPickupCards)
+  document.addEventListener("nav", () => kouzuRenderPickupCards())
+  document.addEventListener("render", () => kouzuRenderPickupCards())
   kouzuRenderPickupCards()
   `
 
   Component.css = `
   #kouzu-pickup-cards {
-    width: 90%;
-    margin: 2rem auto 2.5rem;
+    width: 100%;
+    margin: 0.65rem 0 2.5rem;
+  }
+
+  .kouzu-pickup-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0.2rem 0.65rem;
+  }
+
+  .kouzu-pickup-refresh {
+    appearance: none;
+    padding: 0.38rem 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--secondary) 55%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--light) 88%, transparent);
+    color: var(--darkgray);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+
+  .kouzu-pickup-refresh:hover {
+    border-color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 10%, var(--light));
+  }
+
+  .kouzu-pickup-refresh:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
   }
 
   .kouzu-pickup-grid {
@@ -329,7 +408,11 @@ const PickupCards: QuartzComponentConstructor = () => {
   @media (max-width: 720px) {
     #kouzu-pickup-cards {
       width: 100%;
-      margin: 1.4rem 0 2rem;
+      margin: 0.5rem 0 2rem;
+    }
+
+    .kouzu-pickup-controls {
+      margin: 0 0.1rem 0.55rem;
     }
 
     .kouzu-pickup-card {
