@@ -28,10 +28,13 @@ title: Home
 ![[media/topimg_01.png]]
 byAI
 
+## ランダムPICKUP
+
 <div id="kouzu-pickup-cards" data-pickup-count="2"></div>
 
 ## 更新履歴
 
 2026.8.25 wiki開設。
 2026.8.26 「反映小説一覧」（反映した小説の外部リンク一覧）を作成。
-2026.8.26 「Profile」、各indexのバナーを作成。
+2026.8.28 「Profile」、各indexのバナーを作成。
+2026.8.29 ランダム表示追加。
