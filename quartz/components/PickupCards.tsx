@@ -193,8 +193,11 @@ const PickupCards: QuartzComponentConstructor = () => {
     }
 
     const requestedCount = Number.parseInt(host.dataset.pickupCount || "2", 10)
-    const count = Number.isFinite(requestedCount)
-      ? Math.max(1, Math.min(requestedCount, kouzuPickupCards.length))
+    const responsiveCount = window.matchMedia("(max-width: 720px)").matches
+      ? 1
+      : requestedCount
+    const count = Number.isFinite(responsiveCount)
+      ? Math.max(1, Math.min(responsiveCount, kouzuPickupCards.length))
       : Math.min(2, kouzuPickupCards.length)
     const previousSelection = host.dataset.pickupSelection || ""
     const previousOrder = host.dataset.pickupOrder || ""
@@ -419,15 +422,11 @@ const PickupCards: QuartzComponentConstructor = () => {
       grid-template-columns: 1fr;
       min-height: 0;
       padding: 1.2rem 1.8rem 1.55rem 1.65rem;
-      background-size: cover;
+      background-size: 100% 100%;
     }
 
     .kouzu-pickup-card__image {
-      width: min(64%, 15rem);
-      height: 10rem;
-      min-height: 0;
-      max-height: none;
-      margin: 0.55rem auto 0.3rem;
+      display: none;
     }
 
     .kouzu-pickup-card__content {
