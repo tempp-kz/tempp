@@ -30,8 +30,7 @@ export const pickupCards: PickupCardData[] = [
   {
     enabled: true,
     type: "character",
-    pickupLabel: "Characters",
-    pickupTarget: "03_Characters/",
+    pickupLabel: "登場人物",
     name: "円城環",
     nameLinkType: "internal",
     nameTarget: "03_Characters/現代：辻切区/円城環",

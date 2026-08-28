@@ -60,12 +60,14 @@ const PickupCards: QuartzComponentConstructor = () => {
   function kouzuPickupCreateCard(card, background) {
     const article = document.createElement("article")
     article.className = "kouzu-pickup-card kouzu-pickup-card--" + card.type
+    article.dataset.pickupBackground = background
     article.style.backgroundImage =
       "url('" + kouzuPickupBasePath() + "/static/pickup-backgrounds/" + background + "')"
 
     const imageFrame = document.createElement("div")
     imageFrame.className = "kouzu-pickup-card__image"
     const image = document.createElement("img")
+    image.dataset.pickupImage = card.image
     image.src = kouzuPickupHref(card.image)
     image.alt = card.imageAlt || card.name
     image.loading = "lazy"
@@ -141,9 +143,27 @@ const PickupCards: QuartzComponentConstructor = () => {
     return article
   }
 
+  function kouzuRefreshPickupAssets(host) {
+    for (const image of host.querySelectorAll("img[data-pickup-image]")) {
+      image.src = kouzuPickupHref(image.dataset.pickupImage || "")
+    }
+
+    for (const card of host.querySelectorAll("[data-pickup-background]")) {
+      const background = card.dataset.pickupBackground || ""
+      card.style.backgroundImage =
+        "url('" + kouzuPickupBasePath() + "/static/pickup-backgrounds/" + background + "')"
+    }
+  }
+
   function kouzuRenderPickupCards() {
     const host = document.getElementById("kouzu-pickup-cards")
-    if (!host || host.dataset.rendered === "true") return
+    if (!host) return
+
+    if (host.dataset.rendered === "true" && host.querySelector(".kouzu-pickup-card")) {
+      kouzuRefreshPickupAssets(host)
+      document.dispatchEvent(new CustomEvent("kouzu-pickup-ready"))
+      return
+    }
 
     const requestedCount = Number.parseInt(host.dataset.pickupCount || "2", 10)
     const count = Number.isFinite(requestedCount)
@@ -174,7 +194,8 @@ const PickupCards: QuartzComponentConstructor = () => {
 
   Component.css = `
   #kouzu-pickup-cards {
-    margin: 2rem 0 2.5rem;
+    width: 90%;
+    margin: 2rem auto 2.5rem;
   }
 
   .kouzu-pickup-grid {
@@ -186,30 +207,33 @@ const PickupCards: QuartzComponentConstructor = () => {
   .kouzu-pickup-card {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(8.5rem, 38%) minmax(0, 1fr);
-    min-height: 21rem;
+    grid-template-columns: minmax(6.8rem, 30%) minmax(0, 1fr);
+    min-height: 17.5rem;
     margin: 0;
-    padding: 2rem 1.8rem;
+    padding: 1.35rem 2.25rem 1.35rem 1.55rem;
     overflow: hidden;
     border: 0;
-    border-radius: 0.35rem;
-    background-color: var(--light);
+    border-radius: 0;
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    box-shadow: 0 0.4rem 1.25rem color-mix(in srgb, var(--dark) 12%, transparent);
+    box-shadow: none;
+    box-sizing: border-box;
     isolation: isolate;
   }
 
   .kouzu-pickup-card__image {
     position: relative;
     z-index: 1;
-    align-self: stretch;
-    min-height: 15rem;
-    margin: 1.1rem 0 1rem 0.4rem;
+    align-self: center;
+    height: 11.75rem;
+    min-height: 0;
+    margin: 0.6rem 0 0.55rem 0.35rem;
     overflow: hidden;
-    border: 0.55rem solid color-mix(in srgb, var(--light) 88%, transparent);
+    border: 0.4rem solid color-mix(in srgb, var(--light) 88%, transparent);
     box-shadow: 0 0.25rem 0.8rem color-mix(in srgb, var(--dark) 18%, transparent);
+    box-sizing: border-box;
     transform: rotate(-0.7deg);
   }
 
@@ -227,13 +251,14 @@ const PickupCards: QuartzComponentConstructor = () => {
     min-width: 0;
     flex-direction: column;
     justify-content: center;
-    padding: 0.9rem 0.3rem 0.8rem 1.15rem;
+    padding: 0.45rem 0.85rem 0.45rem 0.9rem;
     color: var(--dark);
+    overflow-wrap: anywhere;
   }
 
   .kouzu-pickup-card__kicker {
     align-self: flex-start;
-    margin: 0 0 0.8rem;
+    margin: 0 0 0.55rem;
     padding: 0.3rem 0.75rem;
     border-bottom: 1px solid color-mix(in srgb, var(--dark) 65%, transparent);
     background: color-mix(in srgb, var(--light) 70%, transparent);
@@ -247,8 +272,9 @@ const PickupCards: QuartzComponentConstructor = () => {
     display: flex;
     align-items: baseline;
     gap: 0.55rem;
-    margin: 0 0 0.8rem;
-    padding: 0 0 0.65rem;
+    min-width: 0;
+    margin: 0 0 0.55rem;
+    padding: 0 0 0.45rem;
     border-bottom: 1px solid color-mix(in srgb, var(--dark) 42%, transparent);
     font-size: clamp(1.25rem, 2.1vw, 1.8rem);
     line-height: 1.25;
@@ -276,7 +302,7 @@ const PickupCards: QuartzComponentConstructor = () => {
     display: grid;
     grid-template-columns: max-content minmax(0, 1fr);
     gap: 0.65rem;
-    padding: 0.55rem 0;
+    padding: 0.38rem 0;
     border-bottom: 1px dotted color-mix(in srgb, var(--dark) 28%, transparent);
   }
 
@@ -291,33 +317,38 @@ const PickupCards: QuartzComponentConstructor = () => {
   .kouzu-pickup-card__row dd {
     min-width: 0;
     margin: 0;
+    overflow-wrap: anywhere;
   }
 
   .kouzu-pickup-card a {
+    max-width: 100%;
     font-weight: 700;
+    overflow-wrap: anywhere;
   }
 
   @media (max-width: 720px) {
     #kouzu-pickup-cards {
+      width: 100%;
       margin: 1.4rem 0 2rem;
     }
 
     .kouzu-pickup-card {
       grid-template-columns: 1fr;
       min-height: 0;
-      padding: 1.5rem 1.25rem 1.65rem;
+      padding: 1.2rem 1.35rem 1.35rem;
       background-size: cover;
     }
 
     .kouzu-pickup-card__image {
-      width: min(76%, 18rem);
-      min-height: 10.5rem;
-      max-height: 13rem;
-      margin: 0.7rem auto 0.4rem;
+      width: min(64%, 15rem);
+      height: 10rem;
+      min-height: 0;
+      max-height: none;
+      margin: 0.55rem auto 0.3rem;
     }
 
     .kouzu-pickup-card__content {
-      padding: 0.8rem 0.35rem 0.2rem;
+      padding: 0.55rem 0.75rem 0.15rem;
     }
 
     .kouzu-pickup-card__row {
