@@ -434,8 +434,8 @@ const PickupCards: QuartzComponentConstructor = () => {
     }
 
     .kouzu-pickup-card__row {
-      grid-template-columns: 1fr;
-      gap: 0.05rem;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: 0.45rem;
     }
   }
   `
