@@ -28,7 +28,7 @@ const WikiPageEnhancements: QuartzComponentConstructor = () => {
       const link = document.createElement("a")
       link.href = kouzuSiteHomePath()
       link.className = "nav-file-title tree-item-self"
-      link.textContent = "Home"
+      link.textContent = "■ HOME"
       item.appendChild(link)
       list.prepend(item)
     }
@@ -79,9 +79,26 @@ const WikiPageEnhancements: QuartzComponentConstructor = () => {
     bannerBlock.insertAdjacentElement("afterend", meta)
   }
 
+  function kouzuRewriteLocationBreadcrumb() {
+    const slug = String(document.body.dataset.slug || "").toLowerCase()
+    if (!slug.startsWith("02_locations/") || slug.endsWith("/index")) return
+
+    const basePath = (document.body.dataset.basepath || "").replace(/\\/$/, "")
+
+    for (const link of document.querySelectorAll(
+      ".breadcrumb-container .breadcrumb-element a",
+    )) {
+      if ((link.textContent || "").trim() !== "Location") continue
+
+      link.textContent = "Places"
+      link.href = (basePath || "") + "/05_places/"
+    }
+  }
+
   function kouzuUpdateWikiPageEnhancements() {
     kouzuSetupExplorerHomeLinks()
     kouzuUpdateAuthoredIndexLayout()
+    kouzuRewriteLocationBreadcrumb()
   }
 
   document.addEventListener("nav", kouzuUpdateWikiPageEnhancements)

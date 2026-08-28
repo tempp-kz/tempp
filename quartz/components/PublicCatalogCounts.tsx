@@ -17,8 +17,11 @@ const PublicCatalogCounts: QuartzComponentConstructor = () => {
       let total = 0
 
       for (const counter of counters) {
-        const prefix =
-          counter.dataset.catalogPrefix.toLowerCase() + "/"
+        const prefixes = String(counter.dataset.catalogPrefix || "")
+          .split(",")
+          .map((prefix) => prefix.trim().toLowerCase())
+          .filter(Boolean)
+          .map((prefix) => prefix + "/")
 
         const count = pages.filter((page) => {
           const filePath = String(page.filePath || "")
@@ -26,7 +29,7 @@ const PublicCatalogCounts: QuartzComponentConstructor = () => {
             .toLowerCase()
 
           return (
-            filePath.startsWith(prefix) &&
+            prefixes.some((prefix) => filePath.startsWith(prefix)) &&
             filePath.endsWith(".md") &&
             !filePath.endsWith("/index.md")
           )
