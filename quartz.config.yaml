@@ -164,7 +164,10 @@ plugins:
     layout:
       position: left
       priority: 50
-  - source: "@quartz-community/graph"
+  - source:
+      repo: "github:enihsyou/quartz-community-graph"
+      ref: "main"
+      name: "graph"
     enabled: true
     layout:
       position: right
