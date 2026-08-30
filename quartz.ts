@@ -5,6 +5,10 @@ import PublicCatalogCounts from "./quartz/components/PublicCatalogCounts"
 import ExternalWorkLinks from "./quartz/components/ExternalWorkLinks"
 import WikiPageEnhancements from "./quartz/components/WikiPageEnhancements"
 import PickupCards from "./quartz/components/PickupCards"
+import type { QuartzTransformerPlugin } from "@quartz-community/types"
+import { simplifySlug } from "@quartz-community/utils"
+import type { Root } from "hast"
+import type { VFile } from "vfile"
 
 componentRegistry.register("public-catalog-counts", PublicCatalogCounts, "local")
 
@@ -120,6 +124,41 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   },
 })
 
+// FolderPageが画面上で自動生成する一覧も、ローカルグラフのリンクとして扱う。
+// index.mdに同じリンク一覧を重複して書かず、直下のページとサブフォルダを自動登録する。
+const FolderIndexLinks: QuartzTransformerPlugin = () => ({
+  name: "FolderIndexLinks",
+  htmlPlugins(ctx) {
+    return [
+      () => (_tree: Root, file: VFile) => {
+        const data = file.data as Record<string, unknown>
+        const slug = data.slug
+        if (typeof slug !== "string" || !slug.endsWith("/index")) return
+
+        const prefix = slug.slice(0, -"index".length)
+        const links = new Set<string>(
+          Array.isArray(data.links) ? data.links.filter((link): link is string => typeof link === "string") : [],
+        )
+
+        for (const candidate of ctx.allSlugs) {
+          if (candidate === slug || !candidate.startsWith(prefix)) continue
+
+          const relative = candidate.slice(prefix.length)
+          const isDirectPage = relative.length > 0 && !relative.includes("/")
+          const isDirectSubfolder = /^[^/]+\/index$/.test(relative)
+
+          if (isDirectPage || isDirectSubfolder) {
+            links.add(simplifySlug(candidate))
+          }
+        }
+
+        data.links = [...links]
+      },
+    ]
+  },
+})
+
 const config = await loadQuartzConfig()
+config.plugins.transformers.push(FolderIndexLinks())
 export default config
 export const layout = await loadQuartzLayout()
