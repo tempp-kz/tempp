@@ -289,7 +289,7 @@ const PickupCards: QuartzComponentConstructor = () => {
   .kouzu-pickup-card {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(6.8rem, 30%) minmax(0, 1fr);
+    grid-template-columns: 12.75rem minmax(0, 1fr);
     min-height: 17.5rem;
     margin: 0;
     padding: 1.35rem 3.35rem 1.6rem 2.1rem;
@@ -309,6 +309,8 @@ const PickupCards: QuartzComponentConstructor = () => {
     position: relative;
     z-index: 1;
     align-self: center;
+    justify-self: center;
+    width: 11.75rem;
     height: 11.75rem;
     min-height: 0;
     margin: 0.6rem 0 0.55rem 0.35rem;
@@ -320,10 +322,13 @@ const PickupCards: QuartzComponentConstructor = () => {
   }
 
   .kouzu-pickup-card__image img {
+    display: block;
     width: 100%;
+    max-width: none;
     height: 100%;
     margin: 0;
     object-fit: cover;
+    aspect-ratio: 1 / 1;
   }
 
   .kouzu-pickup-card__content {
