@@ -568,3 +568,10 @@ a:has(> img[src*="kouzuwiki-index-"]),
   margin: 0 !important;
   object-fit: cover;
 }
+
+/* 中央ヘッダ縮小 */
+@media all and (min-width: 640px) {
+  .page > #quartz-body .page-header {
+    margin-top: 2rem;
+  }
+}
