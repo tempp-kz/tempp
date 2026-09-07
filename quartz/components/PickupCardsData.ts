@@ -68,7 +68,7 @@ export const pickupCards: PickupCardData[] = [
         "era":  "明治",
         "region":  "神津区",
         "regionTarget":  "02_Locations/神津区",
-        "description":  "化物楼・幽凪屋に暮らす美しい女郎夕霧と帽子屋白河の悲恋。",
+        "description":  "化物楼・幽凪屋に暮らす美しい女郎夕霧と帽子屋白河の悲恋、という説明をあまり信じない方が。セツメイシンホウ",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
@@ -208,7 +208,7 @@ export const pickupCards: PickupCardData[] = [
         "era":  "現代",
         "region":  "辻切区",
         "regionTarget":  "02_Locations/辻切区",
-        "description":  "本人ストイックに真面目な人なんだけどピアスだらけで誤解されがちな自宅警備員。",
+        "description":  "本人ストイックに真面目な人なんだけど、ピアスだらけで誤解されがちな自宅警備員。",
         "relatedLabel":  "登場小説・場所",
         "related":  [
                         {
@@ -293,7 +293,7 @@ export const pickupCards: PickupCardData[] = [
         "nameLinkType":  "internal",
         "nameTarget":  "05_Places/辻切区/煉瓦坂",
         "era":  "現代",
-        "region":  "高天町",
+        "region":  "辻切区",
         "regionTarget":  "02_Locations/辻切区",
         "description":  "駅に向かう煉瓦舗装の坂の両側には魅力的なお店がいっぱい★",
         "relatedLabel":  "登場小説・場所",
