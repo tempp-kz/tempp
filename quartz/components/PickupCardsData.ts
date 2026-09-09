@@ -469,7 +469,7 @@ export const pickupCards: PickupCardData[] = [
         "era":  "明治",
         "region":  "神津区",
         "regionTarget":  "02_Locations/神津区",
-        "description":  "化物楼・幽凪屋に暮らす美しい女郎夕霧と帽子屋白河の+G20:K20悲恋、という説明をあまり信じない方が。",
+        "description":  "FM神津火曜24時30分からは『春崎夜道の夜散歩』。怖い町の噂まってるよ！コウヅコワマチウワサ",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
@@ -478,9 +478,9 @@ export const pickupCards: PickupCardData[] = [
                             "target":  "03_Characters/現代：神津区/古屋敷夜道コウヅ"
                         },
                         {
-                            "label":  "神津スカイタワー",
+                            "label":  "FM神津",
                             "linkType":  "internal",
-                            "target":  "05_places/神津区/神津スカイタワーコウヅ"
+                            "target":  "06_Organization/神津区/FM神津コウヅコウヅ"
                         }
                     ],
         "relatedSuffix":  "他",
