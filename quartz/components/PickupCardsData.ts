@@ -542,9 +542,9 @@ export const pickupCards: PickupCardData[] = [
                         }
                     ],
         "relatedSuffix":  "他",
-        "image":  "media/pickup/preview-ryuran-mao.webp",
+        "image":  "media/pickup/preview-annika-korhonen.webp",
         "imagePosition":  "50% 40%",
-        "imageAlt":  "リューラン・マオ"
+        "imageAlt":  "アンニカ・コルホネン"
     },
     {
         "enabled":  true,
