@@ -68,7 +68,7 @@ export const pickupCards: PickupCardData[] = [
         "era":  "明治",
         "region":  "神津区",
         "regionTarget":  "02_Locations/神津区",
-        "description":  "化物楼・幽凪屋に暮らす美しい女郎夕霧と帽子屋白河の悲恋、という説明をあまり信じない方が。セツメイシンホウ",
+        "description":  "化物楼・幽凪屋に暮らす美しい女郎夕霧と帽子屋白河の悲恋、という説明をあまり信じない方が。",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
@@ -376,13 +376,13 @@ export const pickupCards: PickupCardData[] = [
         "enabled":  true,
         "type":  "work",
         "pickupLabel":  "お話",
-        "name":  "長屋鳴鬼ナガヤナオニ",
+        "name":  "長屋鳴鬼",
         "nameLinkType":  "work",
-        "nameTarget":  "長屋鳴鬼ナガヤナオニ",
+        "nameTarget":  "長屋鳴鬼",
         "era":  "明治",
-        "region":  "東京トウキョウ",
-        "regionTarget":  "05_Places/明治/東京トウキョウ",
-        "description":  "なんだか長屋に化物が出るんですって。お駄賃を上げますから見に行ってくれませんか。ナガヤバケモノデダチンアミイ",
+        "region":  "東京",
+        "regionTarget":  "05_Places/明治/東京",
+        "description":  "なんだか長屋に化物が出るんですって。お駄賃を上げますから見に行ってくれませんか。",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
@@ -399,19 +399,19 @@ export const pickupCards: PickupCardData[] = [
         "relatedSuffix":  "他",
         "image":  "media/pickup/preview-nagaya-naki.webp",
         "imagePosition":  "50% 50%",
-        "imageAlt":  "長屋鳴鬼ナガヤナオニ"
+        "imageAlt":  "長屋鳴鬼"
     },
     {
         "enabled":  true,
         "type":  "work",
         "pickupLabel":  "お話",
-        "name":  "落蝉オセミ",
+        "name":  "落蝉",
         "nameLinkType":  "work",
-        "nameTarget":  "落蝉オセミ",
-        "era":  "大正タイショウ",
+        "nameTarget":  "落蝉",
+        "era":  "大正",
         "region":  "神津区",
         "regionTarget":  "02_Locations/神津区",
-        "description":  "橋で死にかけた男を拾った。死ぬところを見たかった。ただそれだけだ。ハシシオトコヒロシミ",
+        "description":  "橋で死にかけた男を拾った。死ぬところを見たかった。ただそれだけだ。",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
@@ -428,19 +428,19 @@ export const pickupCards: PickupCardData[] = [
         "relatedSuffix":  "他",
         "image":  "media/pickup/preview-ochizemi.webp",
         "imagePosition":  "50% 50%",
-        "imageAlt":  "落蝉オセミ"
+        "imageAlt":  "落蝉"
     },
     {
         "enabled":  true,
         "type":  "work",
         "pickupLabel":  "お話",
-        "name":  "おかしな事故物件ジコブッケン",
+        "name":  "おかしな事故物件",
         "nameLinkType":  "work",
-        "nameTarget":  "おかしな事故物件ジコブッケン",
+        "nameTarget":  "おかしな事故物件",
         "era":  "明治",
         "region":  "辻切区",
         "regionTarget":  "02_Locations/辻切区",
-        "description":  "最近多いんですよ、事故物件。そろそろ業態を変えないとかなぁ。サイキンオオジコブッケンギョウタイカ",
+        "description":  "最近多いんですよ、事故物件。そろそろ業態を変えないとかなぁ。",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
@@ -457,7 +457,7 @@ export const pickupCards: PickupCardData[] = [
         "relatedSuffix":  "他",
         "image":  "media/pickup/preview-okashina-jikobukken.webp",
         "imagePosition":  "50% 50%",
-        "imageAlt":  "おかしな事故物件ジコブッケン"
+        "imageAlt":  "おかしな事故物件"
     },
     {
         "enabled":  true,
@@ -469,18 +469,18 @@ export const pickupCards: PickupCardData[] = [
         "era":  "明治",
         "region":  "神津区",
         "regionTarget":  "02_Locations/神津区",
-        "description":  "FM神津火曜24時30分からは『春崎夜道の夜散歩』。怖い町の噂まってるよ！コウヅコワマチウワサ",
+        "description":  "FM神津火曜24時30分からは『春崎夜道の夜散歩』。怖い町の噂まってるよ！",
         "relatedLabel":  "関連地域・人物",
         "related":  [
                         {
                             "label":  "古屋敷夜道",
                             "linkType":  "internal",
-                            "target":  "03_Characters/現代：神津区/古屋敷夜道コウヅ"
+                            "target":  "03_Characters/現代：神津区/古屋敷夜道"
                         },
                         {
                             "label":  "FM神津",
                             "linkType":  "internal",
-                            "target":  "06_Organization/神津区/FM神津コウヅコウヅ"
+                            "target":  "06_Organization/神津区/FM神津"
                         }
                     ],
         "relatedSuffix":  "他",
@@ -494,22 +494,22 @@ export const pickupCards: PickupCardData[] = [
         "pickupLabel":  "登場人物",
         "name":  "リューラン・マオ",
         "nameLinkType":  "internal",
-        "nameTarget":  "03_Characters/大正/リューラン・マオタイショウ",
+        "nameTarget":  "03_Characters/大正/リューラン・マオ",
         "era":  "明治",
         "region":  "神津区",
-        "regionTarget":  "02_Locations/神津区コウヅ",
-        "description":  "あたしにあるのは情報だけ。なのにしたって面倒なことに巻き込まれちゃったわ。ジョウホウメンドウマコ",
+        "regionTarget":  "02_Locations/神津区",
+        "description":  "あたしにあるのは情報だけ。なのにしたって面倒なことに巻き込まれちゃったわ。",
         "relatedLabel":  "登場小説・場所",
         "related":  [
                         {
                             "label":  "呪法八天閣",
                             "linkType":  "internal",
-                            "target":  "06_Organization/神津区/呪法八天閣コウヅ"
+                            "target":  "06_Organization/神津区/呪法八天閣"
                         },
                         {
                             "label":  "阿文",
                             "linkType":  "internal",
-                            "target":  "03_Characters/大正/阿文タイショウ"
+                            "target":  "03_Characters/大正/阿文"
                         }
                     ],
         "relatedSuffix":  "他",
@@ -523,22 +523,22 @@ export const pickupCards: PickupCardData[] = [
         "pickupLabel":  "登場人物",
         "name":  "アンニカ・コルホネン",
         "nameLinkType":  "internal",
-        "nameTarget":  "03_Characters/大正/アンニカ・コルホネンタイショウ",
+        "nameTarget":  "03_Characters/大正/アンニカ・コルホネン",
         "era":  "明治",
         "region":  "神津区",
-        "regionTarget":  "02_Locations/神津区コウヅ",
-        "description":  "神様がみんなを天国に連れて行ってくれる。そうじゃなければ私は……。カミサマテンゴクツイワタシ",
+        "regionTarget":  "02_Locations/神津区",
+        "description":  "神様がみんなを天国に連れて行ってくれる。そうじゃなければ私は……。",
         "relatedLabel":  "登場小説・場所",
         "related":  [
                         {
                             "label":  "端照島",
                             "linkType":  "internal",
-                            "target":  "05_Places/港湾区/端照島コウワンク"
+                            "target":  "05_Places/港湾区/端照島"
                         },
                         {
                             "label":  "オーサ・フラウリー",
                             "linkType":  "internal",
-                            "target":  "03_Characters/大正/オーサ・フラウリータイショウ"
+                            "target":  "03_Characters/大正/オーサ・フラウリー"
                         }
                     ],
         "relatedSuffix":  "他",
@@ -550,13 +550,13 @@ export const pickupCards: PickupCardData[] = [
         "enabled":  true,
         "type":  "character",
         "pickupLabel":  "登場人物",
-        "name":  "常世暁路トコヨアカツキミチ",
+        "name":  "常世暁路",
         "nameLinkType":  "internal",
-        "nameTarget":  "03_Characters/大正/常世暁路タイショウ",
+        "nameTarget":  "03_Characters/大正/常世暁路",
         "era":  "明治",
         "region":  "神津区",
-        "regionTarget":  "02_Locations/神津区コウヅ",
-        "description":  "全ては儘ならない、自らの事ですら。スベママミズカコト",
+        "regionTarget":  "02_Locations/神津区",
+        "description":  "全ては儘ならない、自らの事ですら。",
         "relatedLabel":  "登場小説・場所",
         "related":  [
                         {
@@ -567,13 +567,13 @@ export const pickupCards: PickupCardData[] = [
                         {
                             "label":  "常世座",
                             "linkType":  "internal",
-                            "target":  "06_Organization/神津区/常世座コウヅトコヨザ"
+                            "target":  "06_Organization/神津区/常世座"
                         }
                     ],
         "relatedSuffix":  "他",
         "image":  "media/pickup/preview-tokoyo-akeji.webp",
         "imagePosition":  "50% 40%",
-        "imageAlt":  "常世暁路トコヨアカツキミチ"
+        "imageAlt":  "常世暁路"
     },
     {
         "enabled":  true,
@@ -581,17 +581,17 @@ export const pickupCards: PickupCardData[] = [
         "pickupLabel":  "登場人物",
         "name":  "常世宵路",
         "nameLinkType":  "internal",
-        "nameTarget":  "03_Characters/大正/常世宵路タイショウヨイ",
+        "nameTarget":  "03_Characters/大正/常世宵路",
         "era":  "明治",
         "region":  "神津区",
-        "regionTarget":  "02_Locations/神津区コウヅ",
+        "regionTarget":  "02_Locations/神津区",
         "description":  "「御通行中の皆さまァ、御用と御急ぎのない方は是非ッ、化け物どもをご覧にお立ち寄りになりましてェ」",
         "relatedLabel":  "登場小説・場所",
         "related":  [
                         {
                             "label":  "石影朔太郎",
                             "linkType":  "internal",
-                            "target":  "03_Characters/大正/石影朔太郎タイショウ"
+                            "target":  "03_Characters/大正/石影朔太郎"
                         },
                         {
                             "label":  "義郷東司",
@@ -602,7 +602,7 @@ export const pickupCards: PickupCardData[] = [
         "relatedSuffix":  "他",
         "image":  "media/pickup/preview-tokoyo-yoiji.webp",
         "imagePosition":  "50% 40%",
-        "imageAlt":  "常世宵路トコヨヨイミチ"
+        "imageAlt":  "常世宵路"
     }
 ]
 export const pickupBackgrounds = Array.from(
