@@ -371,6 +371,238 @@ export const pickupCards: PickupCardData[] = [
         "image":  "media/pickup/preview-tsuchimikado-jinja.webp",
         "imagePosition":  "50% 40%",
         "imageAlt":  "土御門神社"
+    },
+    {
+        "enabled":  true,
+        "type":  "work",
+        "pickupLabel":  "お話",
+        "name":  "長屋鳴鬼ナガヤナオニ",
+        "nameLinkType":  "work",
+        "nameTarget":  "長屋鳴鬼ナガヤナオニ",
+        "era":  "明治",
+        "region":  "東京トウキョウ",
+        "regionTarget":  "05_Places/明治/東京トウキョウ",
+        "description":  "なんだか長屋に化物が出るんですって。お駄賃を上げますから見に行ってくれませんか。ナガヤバケモノデダチンアミイ",
+        "relatedLabel":  "関連地域・人物",
+        "related":  [
+                        {
+                            "label":  "土御門鷹一郎",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/明治/土御門鷹一郎"
+                        },
+                        {
+                            "label":  "アディソン・フラウリー",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/明治/アディソン・フラウリー"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-nagaya-naki.webp",
+        "imagePosition":  "50% 50%",
+        "imageAlt":  "長屋鳴鬼ナガヤナオニ"
+    },
+    {
+        "enabled":  true,
+        "type":  "work",
+        "pickupLabel":  "お話",
+        "name":  "落蝉オセミ",
+        "nameLinkType":  "work",
+        "nameTarget":  "落蝉オセミ",
+        "era":  "大正タイショウ",
+        "region":  "神津区",
+        "regionTarget":  "02_Locations/神津区",
+        "description":  "橋で死にかけた男を拾った。死ぬところを見たかった。ただそれだけだ。ハシシオトコヒロシミ",
+        "relatedLabel":  "関連地域・人物",
+        "related":  [
+                        {
+                            "label":  "神津新地",
+                            "linkType":  "internal",
+                            "target":  "05_Places/神津区/神津新地"
+                        },
+                        {
+                            "label":  "小瀧川緑地歩道",
+                            "linkType":  "internal",
+                            "target":  "05_Places/神津区/小瀧川緑地歩道"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-ochizemi.webp",
+        "imagePosition":  "50% 50%",
+        "imageAlt":  "落蝉オセミ"
+    },
+    {
+        "enabled":  true,
+        "type":  "work",
+        "pickupLabel":  "お話",
+        "name":  "おかしな事故物件ジコブッケン",
+        "nameLinkType":  "work",
+        "nameTarget":  "おかしな事故物件ジコブッケン",
+        "era":  "明治",
+        "region":  "辻切区",
+        "regionTarget":  "02_Locations/辻切区",
+        "description":  "最近多いんですよ、事故物件。そろそろ業態を変えないとかなぁ。サイキンオオジコブッケンギョウタイカ",
+        "relatedLabel":  "関連地域・人物",
+        "related":  [
+                        {
+                            "label":  "辻切銀座商店街",
+                            "linkType":  "internal",
+                            "target":  "05_Places/辻切区/辻切銀座商店街"
+                        },
+                        {
+                            "label":  "倉科計悟",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/現代：辻切区/倉科計悟"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-okashina-jikobukken.webp",
+        "imagePosition":  "50% 50%",
+        "imageAlt":  "おかしな事故物件ジコブッケン"
+    },
+    {
+        "enabled":  true,
+        "type":  "work",
+        "pickupLabel":  "お話",
+        "name":  "春崎夜道の『夜散歩』：神津スカイタワー",
+        "nameLinkType":  "work",
+        "nameTarget":  "春崎夜道の『夜散歩』：神津スカイタワー",
+        "era":  "明治",
+        "region":  "神津区",
+        "regionTarget":  "02_Locations/神津区",
+        "description":  "化物楼・幽凪屋に暮らす美しい女郎夕霧と帽子屋白河の+G20:K20悲恋、という説明をあまり信じない方が。",
+        "relatedLabel":  "関連地域・人物",
+        "related":  [
+                        {
+                            "label":  "古屋敷夜道",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/現代：神津区/古屋敷夜道コウヅ"
+                        },
+                        {
+                            "label":  "神津スカイタワー",
+                            "linkType":  "internal",
+                            "target":  "05_places/神津区/神津スカイタワーコウヅ"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-yoru-sanpo.webp",
+        "imagePosition":  "50% 50%",
+        "imageAlt":  "春崎夜道の『夜散歩』：神津スカイタワー"
+    },
+    {
+        "enabled":  true,
+        "type":  "character",
+        "pickupLabel":  "登場人物",
+        "name":  "リューラン・マオ",
+        "nameLinkType":  "internal",
+        "nameTarget":  "03_Characters/大正/リューラン・マオタイショウ",
+        "era":  "明治",
+        "region":  "神津区",
+        "regionTarget":  "02_Locations/神津区コウヅ",
+        "description":  "あたしにあるのは情報だけ。なのにしたって面倒なことに巻き込まれちゃったわ。ジョウホウメンドウマコ",
+        "relatedLabel":  "登場小説・場所",
+        "related":  [
+                        {
+                            "label":  "呪法八天閣",
+                            "linkType":  "internal",
+                            "target":  "06_Organization/神津区/呪法八天閣コウヅ"
+                        },
+                        {
+                            "label":  "阿文",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/大正/阿文タイショウ"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-ryuran-mao.webp",
+        "imagePosition":  "50% 40%",
+        "imageAlt":  "リューラン・マオ"
+    },
+    {
+        "enabled":  true,
+        "type":  "character",
+        "pickupLabel":  "登場人物",
+        "name":  "アンニカ・コルホネン",
+        "nameLinkType":  "internal",
+        "nameTarget":  "03_Characters/大正/アンニカ・コルホネンタイショウ",
+        "era":  "明治",
+        "region":  "神津区",
+        "regionTarget":  "02_Locations/神津区コウヅ",
+        "description":  "神様がみんなを天国に連れて行ってくれる。そうじゃなければ私は……。カミサマテンゴクツイワタシ",
+        "relatedLabel":  "登場小説・場所",
+        "related":  [
+                        {
+                            "label":  "端照島",
+                            "linkType":  "internal",
+                            "target":  "05_Places/港湾区/端照島コウワンク"
+                        },
+                        {
+                            "label":  "オーサ・フラウリー",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/大正/オーサ・フラウリータイショウ"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-ryuran-mao.webp",
+        "imagePosition":  "50% 40%",
+        "imageAlt":  "リューラン・マオ"
+    },
+    {
+        "enabled":  true,
+        "type":  "character",
+        "pickupLabel":  "登場人物",
+        "name":  "常世暁路トコヨアカツキミチ",
+        "nameLinkType":  "internal",
+        "nameTarget":  "03_Characters/大正/常世暁路タイショウ",
+        "era":  "明治",
+        "region":  "神津区",
+        "regionTarget":  "02_Locations/神津区コウヅ",
+        "description":  "全ては儘ならない、自らの事ですら。スベママミズカコト",
+        "relatedLabel":  "登場小説・場所",
+        "related":  [
+                        {
+                            "label":  "幽凪晴夜",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/明治/幽凪晴夜"
+                        },
+                        {
+                            "label":  "常世座",
+                            "linkType":  "internal",
+                            "target":  "06_Organization/神津区/常世座コウヅトコヨザ"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-tokoyo-akeji.webp",
+        "imagePosition":  "50% 40%",
+        "imageAlt":  "常世暁路トコヨアカツキミチ"
+    },
+    {
+        "enabled":  true,
+        "type":  "character",
+        "pickupLabel":  "登場人物",
+        "name":  "常世宵路",
+        "nameLinkType":  "internal",
+        "nameTarget":  "03_Characters/大正/常世宵路タイショウヨイ",
+        "era":  "明治",
+        "region":  "神津区",
+        "regionTarget":  "02_Locations/神津区コウヅ",
+        "description":  "「御通行中の皆さまァ、御用と御急ぎのない方は是非ッ、化け物どもをご覧にお立ち寄りになりましてェ」",
+        "relatedLabel":  "登場小説・場所",
+        "related":  [
+                        {
+                            "label":  "石影朔太郎",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/大正/石影朔太郎タイショウ"
+                        },
+                        {
+                            "label":  "義郷東司",
+                            "linkType":  "internal",
+                            "target":  "03_Characters/明治/義郷東司"
+                        }
+                    ],
+        "relatedSuffix":  "他",
+        "image":  "media/pickup/preview-tokoyo-yoiji.webp",
+        "imagePosition":  "50% 40%",
+        "imageAlt":  "常世宵路トコヨヨイミチ"
     }
 ]
 export const pickupBackgrounds = Array.from(
