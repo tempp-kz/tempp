@@ -498,7 +498,7 @@ export const pickupCards: PickupCardData[] = [
         "era":  "明治",
         "region":  "神津区",
         "regionTarget":  "02_Locations/神津区",
-        "description":  "あたしにあるのは情報だけ。なのにしたって面倒なことに巻き込まれちゃったわ。",
+        "description":  "あたしにあるのは情報だけ。なのに面倒なことに巻き込まれちゃったわ。",
         "relatedLabel":  "登場小説・場所",
         "related":  [
                         {
