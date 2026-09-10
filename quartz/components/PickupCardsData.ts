@@ -480,7 +480,7 @@ export const pickupCards: PickupCardData[] = [
                         {
                             "label":  "FM神津",
                             "linkType":  "internal",
-                            "target":  "06_Organization/神津区/FM神津"
+                            "target":  "06_Organizations/神津区/FM神津"
                         }
                     ],
         "relatedSuffix":  "他",
@@ -504,7 +504,7 @@ export const pickupCards: PickupCardData[] = [
                         {
                             "label":  "呪法八天閣",
                             "linkType":  "internal",
-                            "target":  "06_Organization/神津区/呪法八天閣"
+                            "target":  "06_Organizations/神津区/呪法八天閣"
                         },
                         {
                             "label":  "阿文",
@@ -567,7 +567,7 @@ export const pickupCards: PickupCardData[] = [
                         {
                             "label":  "常世座",
                             "linkType":  "internal",
-                            "target":  "06_Organization/神津区/常世座"
+                            "target":  "06_Organizations/神津区/常世座"
                         }
                     ],
         "relatedSuffix":  "他",
