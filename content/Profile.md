@@ -58,3 +58,5 @@ Under Construction
 - BLove：準グランプリ：第2回BL小説・漫画コンテスト「パーティの後で」：[**遠くて近い**](https://blove.jp/contest/?id=9)
 - WebマガジンCobalt：佳作：ディストピア飯小説賞：[**ユフの果樹園**](https://cobalt.shueisha.co.jp/contents/dystopian-rice_award_result/)
 - Gakken：最終候補：第1回「5分後に意外な結末」大賞：[**その夏、一瞬の恋、永遠の恋**](https://gkp-koushiki.gakken.jp/2024/12/06/79529/)
+
+Twitter:[Tempp／久世余白](https://x.com/tempp_p) 頭の調子が少しおかしいので推奨しません。

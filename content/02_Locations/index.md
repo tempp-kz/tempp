@@ -16,7 +16,7 @@ cssclasses:
 - [[三春夜市]]
 - [[四風市]]
 
-### 神津市
+### [[神津市]]
 
 - [[神津区]]
 - [[辻切区]]
@@ -29,3 +29,11 @@ cssclasses:
 神津観光MAP（Ver6.1）
 
 [![神津観光MAP（Ver6.1）](media/map6-1.ai.png)](media/map6-1.ai.png)
+
+# Physicis et magicae
+
+## [[マジカ・フェルム]]
+
+マジカ・フェルムMAP
+
+[![マジカ・フェルムMAP](media/mmmap_magica.ai.png)](media/mmmap_magica.ai.png)
