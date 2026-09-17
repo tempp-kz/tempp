@@ -239,7 +239,7 @@ cssclasses:
 | --- | --- | --- |
 | [[シーネンフリーデン]] | [[トラソルテオトル]] | [[アダムとイヴの再生世界]] |
 
-# [Physicis et magicae](../01_world/Physicis et magicae)
+# [Physicis et magicae](../01_world/physicis-et-magicaee)
 
 ## [マジカ・フェルム](../02_Locations/マジカ・フェルム.md)
 
