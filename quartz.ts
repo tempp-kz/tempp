@@ -11,7 +11,70 @@ componentRegistry.register("public-catalog-counts", PublicCatalogCounts, "local"
 
 componentRegistry.register("external-work-links", ExternalWorkLinks, "local")
 
-componentRegistry.register("wiki-page-enhancements", WikiPageEnhancements, "local")
+const WikiPageEnhancementsWithOpac = () => {
+  const Component = WikiPageEnhancements()
+
+  Component.afterDOMLoaded = `${Component.afterDOMLoaded ?? ""}
+  const kouzuExplorerOpacClass = "explorer-opac-link"
+  const kouzuExplorerOpacObservers = new WeakMap()
+
+  function kouzuEnsureExplorerOpacLink(list) {
+    let item = list.querySelector(":scope > ." + kouzuExplorerOpacClass)
+
+    if (!item) {
+      item = document.createElement("li")
+      item.className = kouzuExplorerOpacClass
+
+      const link = document.createElement("a")
+      link.href = "https://tempp-kz.github.io/pucopac/"
+      link.className = "nav-file-title tree-item-self"
+      link.textContent = "■ ぷ庫OPAC"
+      item.appendChild(link)
+    }
+
+    const rootItems = Array.from(list.children)
+    const profileItem = rootItems.find((candidate) =>
+      (candidate.querySelector(":scope > a")?.textContent || "").trim() === "■ Profile",
+    )
+    const worksItem = rootItems.find((candidate) =>
+      (candidate.querySelector(":scope > a")?.textContent || "").trim() === "■ 反映小説一覧",
+    )
+
+    if (profileItem && item.nextElementSibling !== profileItem) {
+      list.insertBefore(item, profileItem)
+    } else if (!profileItem && worksItem && worksItem.nextElementSibling !== item) {
+      worksItem.insertAdjacentElement("afterend", item)
+    }
+  }
+
+  function kouzuSetupExplorerOpacLinks() {
+    for (const list of document.querySelectorAll(".explorer-ul")) {
+      kouzuEnsureExplorerOpacLink(list)
+
+      if (kouzuExplorerOpacObservers.has(list)) continue
+
+      const observer = new MutationObserver(() => {
+        kouzuEnsureExplorerOpacLink(list)
+      })
+
+      observer.observe(list, { childList: true })
+      kouzuExplorerOpacObservers.set(list, observer)
+
+      if (window.addCleanup) {
+        window.addCleanup(() => observer.disconnect())
+      }
+    }
+  }
+
+  document.addEventListener("nav", kouzuSetupExplorerOpacLinks)
+  document.addEventListener("render", kouzuSetupExplorerOpacLinks)
+  kouzuSetupExplorerOpacLinks()
+  `
+
+  return Component
+}
+
+componentRegistry.register("wiki-page-enhancements", WikiPageEnhancementsWithOpac, "local")
 
 componentRegistry.register("pickup-cards", PickupCards, "local")
 
