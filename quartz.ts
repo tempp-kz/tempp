@@ -27,7 +27,9 @@ const WikiPageEnhancementsWithOpac = () => {
 
       const link = document.createElement("a")
       link.href = "https://tempp-kz.github.io/pucopac/"
-      link.className = "nav-file-title tree-item-self"
+      link.target = "_blank"
+      link.rel = "noopener noreferrer"
+      link.className = "nav-file-title tree-item-self external"
       link.textContent = "■ ぷ庫OPAC"
       item.appendChild(link)
     }
