@@ -35,6 +35,10 @@ title: Home
 ![[media/topimg_01.png]]
 byAI
 
+## 直近の更新md5件分
+
+<div id="kouzu-recent-updates"></div>
+
 ## ランダムPICKUP（テスト中）
 
 <div id="kouzu-pickup-cards" data-pickup-count="2"></div>

@@ -5,6 +5,8 @@ import PublicCatalogCounts from "./quartz/components/PublicCatalogCounts"
 import ExternalWorkLinks from "./quartz/components/ExternalWorkLinks"
 import WikiPageEnhancements from "./quartz/components/WikiPageEnhancements"
 import PickupCards from "./quartz/components/PickupCards"
+import RecentUpdates from "./quartz/components/RecentUpdates"
+import { PageTypeDispatcher } from "./quartz/plugins/pageTypes/dispatcher"
 import { simplifySlug } from "@quartz-community/utils"
 
 componentRegistry.register("public-catalog-counts", PublicCatalogCounts, "local")
@@ -42,10 +44,25 @@ const WikiPageEnhancementsWithOpac = () => {
       (candidate.querySelector(":scope > a")?.textContent || "").trim() === "■ 反映小説一覧",
     )
 
-    if (profileItem && item.nextElementSibling !== profileItem) {
-      list.insertBefore(item, profileItem)
-    } else if (!profileItem && worksItem && worksItem.nextElementSibling !== item) {
-      worksItem.insertAdjacentElement("afterend", item)
+    let movieItem = list.querySelector(":scope > .explorer-movielog-link")
+    if (!movieItem) {
+      movieItem = document.createElement("li")
+      movieItem.className = "explorer-movielog-link"
+      const link = document.createElement("a")
+      link.href = "https://tempp-kz.github.io/movielog/index.html"
+      link.target = "_blank"
+      link.rel = "noopener noreferrer"
+      link.className = "nav-file-title tree-item-self external"
+      link.textContent = "■趣味につき、業務報告"
+      movieItem.appendChild(link)
+    }
+
+    if (profileItem) {
+      if (movieItem.nextElementSibling !== profileItem) list.insertBefore(movieItem, profileItem)
+      if (item.nextElementSibling !== movieItem) list.insertBefore(item, movieItem)
+    } else if (worksItem) {
+      if (worksItem.nextElementSibling !== item) worksItem.insertAdjacentElement("afterend", item)
+      if (item.nextElementSibling !== movieItem) item.insertAdjacentElement("afterend", movieItem)
     }
   }
 
@@ -79,6 +96,7 @@ const WikiPageEnhancementsWithOpac = () => {
 componentRegistry.register("wiki-page-enhancements", WikiPageEnhancementsWithOpac, "local")
 
 componentRegistry.register("pickup-cards", PickupCards, "local")
+componentRegistry.register("recent-updates", RecentUpdates, "local")
 
 type ExplorerNode = Parameters<NonNullable<ExplorerOptions["mapFn"]>>[0]
 
@@ -239,3 +257,14 @@ if (contentIndexEmitter) {
 
 export default config
 export const layout = await loadQuartzLayout()
+layout.byPageType.content ??= {}
+layout.byPageType.content.afterBody = [
+  ...(layout.byPageType.content.afterBody ?? layout.defaults.afterBody ?? []),
+  componentRegistry.instantiate(RecentUpdates),
+]
+const pageDispatcherIndex = config.plugins.emitters.findIndex(
+  (emitter) => emitter.name === "PageTypeDispatcher",
+)
+if (pageDispatcherIndex >= 0) {
+  config.plugins.emitters[pageDispatcherIndex] = PageTypeDispatcher(layout)
+}
