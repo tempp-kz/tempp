@@ -53,7 +53,7 @@ const WikiPageEnhancementsWithOpac = () => {
       link.target = "_blank"
       link.rel = "noopener noreferrer"
       link.className = "nav-file-title tree-item-self external"
-      link.textContent = "■趣味につき、業務報告"
+      link.textContent = "■ 趣味につき、業務報告"
       movieItem.appendChild(link)
     }
 
